@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id       Int    @id @default(autoincrement())
+  email    String @unique(map: "email") @db.VarChar(255)
+  password String @db.VarChar(255)
+}
+
+model users_information {
+  id           Int     @id @default(autoincrement())
+  id_user      Int
+  name         String  @db.VarChar(255)
+  last_name    String  @db.VarChar(255)
+  phone_number String? @db.VarChar(255)
+  country_id   Int?
+}
+
+model cursos {
+  id             Int     @id @default(autoincrement())
+  name_of_course String  @db.VarChar(100)
+  course_url     String  @db.VarChar(180)
+  price_arg      String  @db.VarChar(60)
+  price_usd      String  @db.VarChar(60)
+  description    String  @db.Text
+  public         Boolean
+  cover_img      String  @db.VarChar(255)
+}
+
+model files {
+  id  Int    @id @default(autoincrement())
+  url String @db.VarChar(255)
+}
+
+model files_curso {
+  id       Int @id @default(autoincrement())
+  id_file  Int
+  id_curso Int
+}
+
+model profesors {
+  id         Int    @id @default(autoincrement())
+  first_name String @db.VarChar(100)
+  last_name  String @db.VarChar(100)
+  url_avatar String @db.VarChar(255)
+  bio        String @db.VarChar(255)
+}
+
+model profesors_curso {
+  id          Int @id @default(autoincrement())
+  id_curso    Int
+  id_profesor Int
+}
+
+model videos_curso {
+  id          Int    @id @default(autoincrement())
+  id_curso    Int
+  name        String @db.VarChar(255)
+  url         String @db.VarChar(255)
+  order_curso Int
+}

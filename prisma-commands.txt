@@ -1,0 +1,3 @@
+npx prima init
+npx prisma db pull (pull the schemas and generate the models)
+npx prisma generate (generate the client for the querys)

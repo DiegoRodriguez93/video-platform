@@ -1,0 +1,62 @@
+{
+  "name": "course_dashboard_api",
+  "version": "1.0.0",
+  "description": "Ajedrez Latino Course Dashboard API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "ts-node --transpile-only ./index.ts",
+    "heroku-start": "ts-node \"./index.ts\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .ts",
+    "lint-and-fix": "eslint . --ext .ts --fix",
+    "prettier-watch": "onchange 'src/**/*.ts' -- prettier --write {{changed}}",
+    "schema": "npx prisma db pull",
+    "client": "npx prisma generate"
+  },
+  "author": "diegorodriguez93",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@prisma/client": "^4.3.1",
+    "@types/axios": "^0.14.0",
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
+    "@types/express-fileupload": "^1.4.1",
+    "@types/fluent-ffmpeg": "^2.1.20",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/lodash": "^4.14.186",
+    "@types/mercadopago": "^1.5.8",
+    "aws-sdk": "^2.1225.0",
+    "axios": "^1.2.3",
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "https-localhost": "^4.7.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mercadopago": "^1.5.14",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.19",
+    "prisma": "^4.3.1",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.7.18",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.3"
+  },
+  "include": [
+    "src",
+    "decs.d.ts"
+  ]
+}
